@@ -16,6 +16,10 @@
       href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
@@ -70,7 +74,7 @@
             Эффективные решения <br />
             для вашего бизнеса
           </h1>
-          <button class="order-button" type="button">Заказать услугу</button>
+          <button class="order-button" type="button" data-modal-open>Заказать услугу</button>
         </div>
       </section>
       <!--Benefits company-->
@@ -110,28 +114,37 @@
           <h2 class="activities-title">Чем мы занимаемся</h2>
           <ul class="activities-list common-lists">
             <li class="activities-item">
-              <img
-                src="./images/box1.jpg"
-                alt="написание кода на комьютере"
-                width="370"
-                height="294"
-              />
+              <div class="activities-container-img">
+                <img
+                  src="./images/box1.jpg"
+                  alt="написание кода на комьютере"
+                  width="370"
+                  height="294"
+                />
+                <h3 class="activities-title-img">Десктопные приложения</h3>
+              </div>
             </li>
             <li class="activities-item">
-              <img
-                src="./images/box2.jpg"
-                alt="разработка интерфеса для мобильного устройства "
-                width="370"
-                height="294"
-              />
+              <div class="activities-container-img">
+                <img
+                  src="./images/box2.jpg"
+                  alt="разработка интерфеса для мобильного устройства "
+                  width="370"
+                  height="294"
+                />
+                <h3 class="activities-title-img">Мобильные приложения</h3>
+              </div>
             </li>
             <li class="activities-item">
-              <img
-                src="./images/box3.jpg"
-                alt="разработка графического дизайна на планшете"
-                width="370"
-                height="294"
-              />
+              <div class="activities-container-img">
+                <img
+                  src="./images/box3.jpg"
+                  alt="разработка графического дизайна на планшете"
+                  width="370"
+                  height="294"
+                />
+                <h3 class="activities-title-img">Дизайнерские решения</h3>
+              </div>
             </li>
           </ul>
         </div>
@@ -412,5 +425,16 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop" data-modal>
+      <div class="modal">
+        <button class="modal-close-btn" type="button" data-modal-close>
+          <svg class="modal-close-icon">
+            <use href="./images/icons.svg#icon-close-black""></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="./js/modal.js"></script>
   </body>
 </html>

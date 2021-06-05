@@ -96,10 +96,10 @@ body {
   letter-spacing: 0.02em;
   color: var(--main-color);
 }
-.menu-link:hover {
-  color: var(--accent-color);
-}
+.menu-link:hover,
 .menu-link:focus {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   color: var(--accent-color);
 }
 /* === End menu === */
@@ -128,6 +128,8 @@ body {
 .header-mail-link:focus,
 .header-tel-link:hover,
 .header-tel-link:focus {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   color: var(--accent-color);
 }
 .mail-link-icon {
@@ -281,6 +283,26 @@ body {
   margin-top: 30px;
   margin-left: 30px;
 }
+.activities-container-img {
+  position: relative;
+}
+.activities-title-img {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 27px 82px 27px 83px;
+
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
+  background: rgba(47, 48, 58, 0.8);
+}
 /* === End activities company === */
 
 /* === Team === */
@@ -347,10 +369,14 @@ body {
 }
 .social-list-link:hover,
 .social-list-link:focus {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   background-color: var(--accent-color);
 }
 .social-list-link:hover .social-list-icon,
 .social-list-link:focus .social-list-icon {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   fill: #ffffff;
 }
 .social-list-icon {
@@ -392,10 +418,14 @@ body {
 }
 .client-list-link:hover,
 .client-list-link:focus {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   border: 1px solid var(--accent-color);
 }
 .client-list-link:hover .client-list-icon,
 .client-list-link:focus .client-list-icon {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   fill: var(--accent-color);
 }
 
@@ -492,6 +522,8 @@ body {
 }
 .invitation-social-link:hover,
 .invitation-social-link:focus {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   background-color: var(--accent-color);
 }
 .invitation-social-icon {
@@ -530,6 +562,8 @@ body {
 }
 .button-porfolio:hover,
 .button-porfolio:focus {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   color: var(--title-text-color);
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -552,8 +586,37 @@ body {
 }
 .projects-item:hover,
 .projects-item:focus {
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(131, 84, 84, 0.16);
+}
+.projects-link-wrapper:hover .overlay,
+.projects-link-wrapper:focus .overlay {
+  transform: translateY(0);
+}
+
+.projects-link-img {
+  position: relative;
+  overflow: hidden;
+}
+.overlay {
+  position: absolute;
+  overflow: auto;
+  transform: translateY(100%);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  top: 0;
+  left: 0;
+  padding: 63px 24px;
+  font-family: var(--main-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  background: rgba(33, 150, 243, 0.9);
 }
 .projects-item-content {
   background: #ffffff;
@@ -563,6 +626,7 @@ body {
 }
 
 .projects-title {
+  color: var(--main-color);
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
@@ -579,3 +643,54 @@ body {
 
 /* === End projects === */
 /* === End portfolio page === */
+
+/* === Modal window === */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.2);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal {
+  position: absolute;
+  width: 528px;
+  height: 581px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+.modal-close-btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 0;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.modal-close-icon {
+  fill: #000000;
+  width: 18px;
+  height: 18px;
+}
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
