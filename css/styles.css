@@ -87,20 +87,31 @@ body {
   align-items: center;
 }
 .menu-item:not(:last-child) {
+  position: relative;
   margin-right: 50px;
 }
 .menu-link {
+  display: inline-flex;
   font-style: normal;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--main-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .menu-link:hover,
 .menu-link:focus {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
   color: var(--accent-color);
+}
+.menu .current::after {
+  position: absolute;
+  display: inline-block;
+  content: '';
+  width: 100%;
+  height: 4px;
+  bottom: 0;
+  background: #2196f3;
+  border-radius: 2px;
 }
 /* === End menu === */
 /* === End Navigation === */
@@ -123,13 +134,12 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--secondary-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-mail-link:hover,
 .header-mail-link:focus,
 .header-tel-link:hover,
 .header-tel-link:focus {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
   color: var(--accent-color);
 }
 .mail-link-icon {
@@ -366,17 +376,14 @@ body {
   height: 44px;
   background-color: #ffffff;
   border-radius: 50%;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-list-link:hover,
 .social-list-link:focus {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
   background-color: var(--accent-color);
 }
 .social-list-link:hover .social-list-icon,
 .social-list-link:focus .social-list-icon {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
   fill: #ffffff;
 }
 .social-list-icon {
@@ -415,17 +422,15 @@ body {
   height: 92px;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .client-list-link:hover,
 .client-list-link:focus {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
   border: 1px solid var(--accent-color);
 }
 .client-list-link:hover .client-list-icon,
 .client-list-link:focus .client-list-icon {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: var(--accent-color);
 }
 
@@ -516,14 +521,13 @@ body {
   height: 44px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .invitation-social-item:not(:last-child) {
   margin-right: 10px;
 }
 .invitation-social-link:hover,
 .invitation-social-link:focus {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
   background-color: var(--accent-color);
 }
 .invitation-social-icon {
@@ -559,11 +563,10 @@ body {
   border: 1px solid transparent;
   background-color: #f5f4fa;
   text-align: center;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button-porfolio:hover,
 .button-porfolio:focus {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
   color: var(--title-text-color);
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -583,10 +586,10 @@ body {
   flex-basis: calc((100% - 90px) / 3);
   margin-top: 30px;
   margin-left: 30px;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .projects-item:hover,
 .projects-item:focus {
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(131, 84, 84, 0.16);
 }
