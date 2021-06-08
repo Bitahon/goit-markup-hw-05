@@ -312,10 +312,12 @@ body {
 }
 .activities-title-img {
   position: absolute;
+  display: flex;
+  height: 70px;
   width: 100%;
   bottom: 0;
-  padding: 27px 82px 27px 83px;
-
+  align-items: center;
+  justify-content: center;
   font-family: var(--main-font);
   font-style: normal;
   font-weight: 700;
